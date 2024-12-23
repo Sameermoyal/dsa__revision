@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//9.Create a program that stores in a new array whether each element of the array is positive (true) or negative (false).
+
+
+int main(){
+   int arr[6]{34,-23,45,-23,67,-12};
+   
+   int n=sizeof(arr)/sizeof(arr[0]);
+   bool booleanArr[n];
+   
+   for(int i=0;i<n;i++){
+       if(arr[i]>0){
+           booleanArr[i]=true;
+       }else{
+           booleanArr[i]=false;
+       }
+   }
+   
+    for(auto it:booleanArr){
+        cout<<it<<" ";
+    }
+   
+}

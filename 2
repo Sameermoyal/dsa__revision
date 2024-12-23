@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+// 2.Create a program to store in a new array the product of each element and
+// the previous element from the original array.
+
+int main(){
+    int arr[6]={4,3,2,4,3,2};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int product[n];
+    
+    for(int i=0;i<n;i++){
+        if(i==0){
+            product[i]=arr[i];
+        }else{
+        product[i]=arr[i-1]*arr[i];
+        }
+    }
+    
+    for(auto it:product){
+        cout<<it<<" ";
+    }
+    
+}

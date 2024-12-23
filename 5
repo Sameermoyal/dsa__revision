@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//5.Write a program to calculate the sum of the elements at even indexes and store the result in a new array.
+
+
+
+int main(){
+    int arr[6]{1,4,8,10,12,15};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int result[n];
+    
+    for(int i=0;i<n;i++){
+       if(i==0){
+           
+          result[i]=arr[i];
+       }else if(i%2==1){
+           result[i]=0;
+       }else{
+           result[i]=arr[i]+result[i-2];
+       }
+    }
+    
+    for(auto it:result){
+        cout<<it<<" ";
+    }
+   
+}

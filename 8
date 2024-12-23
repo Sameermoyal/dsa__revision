@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//8.Write a program that replaces all elements greater than 50 with 50 and stores the results in a new array.
+
+
+int main(){
+    int arr[6]{1,56,8,88,45,78};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int newArr[n];
+    
+    for(int i=0;i<n;i++){
+      if(arr[i]>50){
+          newArr[i]=50;
+      }else{
+          newArr[i]=arr[i];
+      }
+    }
+    
+    for(auto it:newArr){
+        cout<<it<<" ";
+    }
+   
+}

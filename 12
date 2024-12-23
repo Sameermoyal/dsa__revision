@@ -1,0 +1,19 @@
+//12.Write a program that adds the square of each index to the corresponding element in the array.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+   int arr[5]={2,3,4,5,6};
+   int n=sizeof(arr)/sizeof(arr[0]);
+   vector<int>result(n) ;
+   
+   for(int i=0;i<n;i++){
+       result[i]=arr[i]+i*i;
+   }
+   
+   for(int i=0;i<n;i++){
+       cout<<result[i]<<" ";
+   }
+    
+}
