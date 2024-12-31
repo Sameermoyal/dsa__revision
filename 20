@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+//Find the second largest element in an array.
+
+int main(){
+  int arr[5]={5,3,6,22,12};
+  int first= INT_MIN;
+  int second=INT_MIN;
+  
+  
+  for(auto it:arr){
+      if(first<it){
+          second=first;
+          first=it;
+      }else if(it>second && it !=first){
+          second=it;
+      }
+  }
+  
+  cout<<second;
+  
+}

@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//: Write a program to find the difference between elements at odd indices and even indices.
+int main(){
+    vector<int>arr={2,4,2,2,3} ;
+    
+    
+    int ois=0;
+    int eis=0;
+    
+    for(int i = 0; i < arr.size(); i++){
+       if(i%2==0){
+           eis+=arr[i];
+       }
+       else{
+           ois+=arr[i];
+       }
+    }
+    cout<<abs(ois-eis);
+    
+   
+}
+

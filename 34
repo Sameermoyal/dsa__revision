@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//: Write a program to calculate the cumulative product of all elements in the array up to each index.
+int main(){
+    vector<int>arr={2,4,2,2,3} ;
+    
+    
+    int cumulativeProduct=1;
+    
+    for(int i = 0; i < arr.size(); i++){
+        cumulativeProduct *= arr[i]; 
+        arr[i] = cumulativeProduct; 
+    }
+    
+    for(auto it:arr){
+        cout<<it<<endl;
+    }
+}
+

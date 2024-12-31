@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+// Write a program to perform the modulo operation between each element and its index.
+int main(){
+  int arr[]={3,2,4,5,1,6,8};
+
+   vector<int>newArr; 
+
+   int n=sizeof(arr)/sizeof(arr[0]);
+   int d;
+  for(int i=1;i<=n;i++){
+  if(i==0){
+      newArr[i]=0;
+  }else{
+       d=arr[i]%i;
+   newArr.push_back(d);
+  }
+  }
+  
+  for(auto it:newArr){
+      cout<<it<<endl;
+  }
+ 
+  
+}
