@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+//Write a C++ program to implement a recursive function to get the nth Fibonacci number.
+
+int Fibonacci(int n ,int f,int s,int i=0){
+    if(i>n){
+        return 0;
+    }
+    
+    
+     cout<<f<<" ";
+     
+    return Fibonacci(n,s,s+f,i+1) ;
+           
+
+}
+
+
+int main(){
+    int n=10; ;
+    
+    Fibonacci(n,0,1);
+ 
+}
