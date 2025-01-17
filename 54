@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+//sum subarray problem
+
+int sumK(vector<int>& arr,int k){
+    int windowsum=0;
+    int maxsum=0;
+    for(int i=0;i<k;i++){
+        windowsum+=arr[i];
+    }
+    
+    maxsum=windowsum;
+    
+    for(int i=k;i<arr.size();i++){
+        windowsum+=arr[i]-arr[i-k];
+        maxsum=max(maxsum,windowsum);
+    }
+    
+    return maxsum;
+}
+
+
+int main(){
+   vector<int>arr={5,5,4,5,2,4};
+   int k=3;
+   int result= sumK(arr,k);
+   cout<<result;
+}
