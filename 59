@@ -1,0 +1,209 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Node{
+    int data;
+    Node *next;
+    
+    Node(int data){
+        this->data=data;
+        next=nullptr;
+    }
+};
+
+class Linklist{
+    Node *head;
+
+    public:
+        void pushback(int data){
+            Node *newNode =new Node(data);
+            
+            if(!head){
+                head=newNode;
+                head->next=nullptr;
+                return;
+            }
+            if(!head->next){
+                head->next=newNode;
+                return;
+            }
+            
+            Node *temp=head;
+            
+            while(temp->next){
+                temp=temp->next;
+            }
+            
+            temp->next=newNode;
+            
+            
+        }
+        
+        void display(){
+            if(!head){
+                cout<<"Nothing to print ";
+            }
+             
+        Node *temp =head;
+        while(temp){
+            cout<<temp->data<<"->";
+            temp=temp->next;
+        }
+        cout<<"NULL";
+      
+        }
+};
+
+class Stack{
+    Node *top;
+    
+    public:
+    
+    void pushback(int data){
+        Node *newNode=new Node(data);
+        
+        if(!top){
+            top=newNode;
+            top->next=nullptr;
+            return;
+        }
+        
+        if(!top->next){
+            top->next=newNode;
+            return;
+        }
+        
+        Node *temp=top;
+        
+        while(temp->next){
+        temp=temp->next;
+        }
+        
+        temp->next=newNode;
+       
+        
+    }
+     void display(){
+         cout<<"Stack: ";
+            if(!top){
+                cout<<"Nothing to print ";
+            }
+             
+        Node *temp =top;
+        while(temp){
+            cout<<temp->data<<"->";
+            temp=temp->next;
+        }
+        cout<<"NULL"<<"\n";
+    
+        }
+        
+        void popback(){
+            
+            if(!top){
+                cout<<"Nothing to Pop ";
+            
+                return;
+            }
+            
+            Node *temp=top;
+            if(!top->next){
+                temp=temp->next;
+                top->next=nullptr;
+                delete temp;
+                return;
+            }
+            
+            while(temp->next->next){
+                temp=temp->next;
+            }
+            delete temp->next->next;
+            temp->next=nullptr;
+            
+        }
+};
+
+
+class Queue{
+    Node *front;
+    
+    public:
+      void pushback(int data){
+            Node *newNode =new Node(data);
+            
+            if(!front){
+                front=newNode;
+                front->next=nullptr;
+                return;
+            }
+            if(!front->next){
+                front->next=newNode;
+                return;
+            }
+            
+            Node *temp=front;
+            
+            while(temp->next){
+                temp=temp->next;
+            }
+            
+            temp->next=newNode;
+            
+            
+        }
+     void display(){
+         cout<<"Queue: ";
+            if(!front){
+                cout<<"Nothing to print ";
+            }
+             
+        Node *temp =front;
+        while(temp){
+            cout<<temp->data<<"->";
+            temp=temp->next;
+        }
+        cout<<"NULL"<<"\n";
+      
+        }
+        
+    void shift(){
+        if(!front){
+            cout<<"Nothing to delete";
+            return;
+        }
+        
+        if(!front->next){
+            delete front;
+            return;
+        }
+        
+        Node *temp=front;
+        front=front->next;
+        delete temp;
+        
+    
+    }    
+};
+
+
+int main(){
+    // Linklist l;
+    // l.pushback(5);
+    // l.pushback(7);
+    // l.display();
+    
+    Stack s;
+    s.pushback(5);
+    s.pushback(8);
+    s.pushback(8);
+    s.display();
+    s.popback();
+     s.pushback(1); s.pushback(9);
+    s.display();
+    
+    // Queue q;
+    // q.pushback(5);
+    // q.pushback(8);
+    // q.pushback(2);
+    // q.display();
+}
